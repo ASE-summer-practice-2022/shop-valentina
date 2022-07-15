@@ -1,0 +1,36 @@
+@import "./styles/colors";
+@import "./styles/fonts";
+@import "./styles/light-theme";
+
+html,
+body {
+  margin: 0;
+  font-family: "Yanone Kaffeesatz", sans-serif !important;
+  font-weight: 300 !important;
+  color: $dirty-brown;
+}
+
+button,
+label,
+input,
+textarea,
+a,
+p {
+  font-family: "Yanone Kaffeesatz", sans-serif !important;
+  letter-spacing: 0.5px;
+  color: $dirty-brown;
+  font-size: 20px !important;
+}
+
+input,
+label,
+textarea,
+p {
+  font-weight: 300 !important;
+}
+
+.app {
+  min-height: 100vh;
+  background: $lemon-cream;
+  background-image: linear-gradient($dark-grey, $dark-grey), url("./assets/imgs/pen.png");
+}

@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 300;
+  src: url(/fonts/YanoneKaffeesatz-Light.ttf?7093d6d402dd774665bf85fff8769a2c) format("truetype");
+}
+@font-face {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/YanoneKaffeesatz-Regular.ttf?19bfeab9c82bdea4455e983149f4aa3d) format("truetype");
+}
+div.MuiTextField-root label {
+  color: rgb(48, 48, 48);
+  margin-left: 4px;
+}
+div.MuiTextField-root label.Mui-focused {
+  color: #d89569;
+}
+div.MuiTextField-root .MuiOutlinedInput-root fieldset {
+  border-color: #d89569;
+}
+div.MuiTextField-root .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+div.MuiTextField-root .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #d89569;
+}
+
+div.MuiDialog-paper .MuiDialogContent-root {
+  background-color: #ffffe0;
+}
+div.MuiDialog-paper .MuiDialogActions-root {
+  background-color: beige;
+}
+
+button.MuiButton-root {
+  color: #d89569;
+  letter-spacing: 1.2px;
+}
+button.MuiButton-root.MuiButton-outlined {
+  border-color: #d89569;
+  padding: 7px 25px;
+}
+
+span.MuiCheckbox-root {
+  border-radius: 5px;
+}
+span.MuiCheckbox-root svg {
+  width: 40px;
+  height: 40px;
+  fill: #fed6bc;
+}
+
+h1.MuiTypography-h1 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+header.MuiAppBar-root {
+  background: #fed6bc;
+  background-image: url(/images/inc-spots.png?d23aa8d30beed13cb96a6927957ea21a);
+  background-position: 65% 65%;
+  background-repeat: no-repeat;
+  color: rgb(48, 48, 48);
+  box-shadow: 0 2px 10px #d89c74;
+}
+
+button.MuiFab-root.MuiFab-primary {
+  background-color: #d89569;
+  box-shadow: 1px 3px 10px #d39e7b;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Yanone Kaffeesatz", sans-serif !important;
+  font-weight: 300 !important;
+  color: rgb(48, 48, 48);
+}
+
+button,
+label,
+input,
+textarea {
+  font-family: "Yanone Kaffeesatz", sans-serif !important;
+  letter-spacing: 0.5px;
+  color: rgb(48, 48, 48);
+  font-size: 20px !important;
+}
+
+input,
+label,
+textarea {
+  font-weight: 300 !important;
+}
