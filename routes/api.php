@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LoginController;
-use App\Http\Controllers\Api\TodoController;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\CartController;
 
 Route::controller(LoginController::class)->group(function () {
     Route::post('/login', 'login');
@@ -11,19 +12,26 @@ Route::controller(LoginController::class)->group(function () {
     Route::post('/register', 'register');
 });
 
+Route::get('/products', [ProductController::class, 'getProducts']);
+Route::get('/products/{id}', [ProductController::class, 'getProduct']);
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $req) {
         return $req->user();
     });
 
-    Route::controller(TodoController::class)->group(function () {
-        Route::prefix('/todos')->group(function () {
-            Route::get('', 'getTodos');
-            Route::delete('', 'deleteTodos');
-            Route::post('', 'addTodo');
-            Route::get('/{id}', 'getTodo');
-            Route::put('/{id}', 'editTodo');
-            Route::delete('/{id}', 'deleteTodo');
+    Route::controller(CartController::class)->group(function () {
+        Route::prefix('/cart-items')->group(function () {
+            Route::get('', 'getCartItems');
+            Route::delete('', 'deleteCartItems');
+            Route::post('', 'createCartItem');
+            Route::get('/{id}', 'getCartItem');
+            Route::put('/{id}', 'updateCartItem');
+            Route::delete('/{id}', 'deleteCartItem');
         });
     });
+        // Route::controller(ProductController::class)->group(function () {
+    //     Route::prefix('/products')->group(function () {
+    //     });
+    // });
 });

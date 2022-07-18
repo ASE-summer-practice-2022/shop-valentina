@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: "Yanone Kaffeesatz", sans-serif !important;
   font-weight: 300 !important;
-  color: $dirty-brown;
+  color: $font-main;
 }
 
 button,
@@ -18,7 +18,7 @@ a,
 p {
   font-family: "Yanone Kaffeesatz", sans-serif !important;
   letter-spacing: 0.5px;
-  color: $dirty-brown;
+  color: $font-main;
   font-size: 20px !important;
 }
 
@@ -27,10 +27,4 @@ label,
 textarea,
 p {
   font-weight: 300 !important;
-}
-
-.app {
-  min-height: 100vh;
-  background: $lemon-cream;
-  background-image: linear-gradient($dark-grey, $dark-grey), url("./assets/imgs/pen.png");
 }

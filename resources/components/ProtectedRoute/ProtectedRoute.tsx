@@ -1,3 +1,4 @@
+import { observer } from "mobx-react";
 import React from "react";
 import { Navigate } from "react-router-dom";
 
@@ -14,4 +15,4 @@ function ProtectedRoute({ children }: IProtectedRouteProps) {
   return children;
 }
 
-export default ProtectedRoute;
+export default observer(ProtectedRoute);

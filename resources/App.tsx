@@ -1,33 +1,34 @@
+import "./App.scss";
+
+import { Box, CssBaseline } from "@mui/material";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { ProtectedRoute } from "./components";
-import { Catalog, Home, Login, PageNotFound, Product, Register } from "./pages";
+import { Header } from "./layouts";
+import { Cart, Home, PageNotFound, Product } from "./pages";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route
-        path="/catalog"
-        element={
-          <ProtectedRoute>
-            <Catalog />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/product"
-        element={
-          <ProtectedRoute>
-            <Product />
-          </ProtectedRoute>
-        }
-      />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <Box className="app">
+      <CssBaseline />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="*" element={<PageNotFound />} />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </Box>
   );
 }
 
