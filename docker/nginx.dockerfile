@@ -1,5 +1,4 @@
 FROM nginx
 
-ADD docker/conf/vhost.conf /etc/nginx/conf.d/default.conf
-
-WORKDIR /var/www/laravel-react-shop/backend
+WORKDIR /var/www/laravel-react-shop
+ADD conf/vhost.conf /etc/nginx/conf.d/default.conf

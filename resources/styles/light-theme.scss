@@ -2,42 +2,44 @@
 
 div.MuiTextField-root {
   & label {
-    color: $dirty-brown;
+    color: $font-main;
     margin-left: 4px;
 
     &.Mui-focused {
-      color: $light-orange;
+      color: $turquoise-green80;
     }
   }
   .MuiOutlinedInput-root {
     & fieldset {
-      border-color: $light-orange;
+      border-color: $turquoise-green80;
     }
     &:hover fieldset {
-      border-color: $black;
+      border-color: rgba(0, 0, 0, 0.3);
     }
     &.Mui-focused fieldset {
-      border-color: $light-orange;
+      border-color: $turquoise-green80;
     }
   }
 }
 
 div.MuiDialog-paper {
   & .MuiDialogContent-root {
-    background-color: #ffffe0;
-  }
-  & .MuiDialogActions-root {
-    background-color: beige;
+    background-color: $green-tea20;
   }
 }
 
-a.MuiButton-root,
 button.MuiButton-root {
-  color: $turquoise-green100;
-  background-color: $grandma-apples80;
-  letter-spacing: 1.2px;
-  padding: 7px 25px;
-  border-radius: 0;
+  &.MuiButton-contained {
+    color: $turquoise-green100;
+    background-color: $grandma-apples80;
+    letter-spacing: 1.2px;
+    padding: 7px 25px;
+    border-radius: 0;
+
+    &:hover {
+      background-color: $grandma-apples60;
+    }
+  }
 }
 
 span.MuiCheckbox-root {
@@ -46,7 +48,6 @@ span.MuiCheckbox-root {
   & svg {
     width: 40px;
     height: 40px;
-    fill: $peach;
   }
 }
 
@@ -63,7 +64,8 @@ header.MuiAppBar-root {
   box-shadow: 0 2px 10px $turquoise-green40;
 }
 
-button.MuiFab-root {
+button.MuiFab-root,
+a.MuiFab-root {
   &.MuiFab-primary {
     background-color: $turquoise-green40;
     box-shadow: none;

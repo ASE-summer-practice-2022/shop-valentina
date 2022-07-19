@@ -1,26 +1,30 @@
-import { Button, Container, CssBaseline, Stack, Typography } from "@mui/material";
-import React from "react";
+import { Stack } from "@mui/material";
+import { Container } from "@mui/system";
+import { observer } from "mobx-react-lite";
+import React, { useEffect } from "react";
+
+import { ProductCard } from "../../components";
+import { useStore } from "../../hooks";
+import { Product } from "../../models";
 
 function Home() {
+  const { productStore } = useStore();
+  const productCards = productStore.products.map((product: Product) => <ProductCard key={product.id} {...product} />);
+
+  useEffect(() => {
+    async function loadPage() {
+      await productStore.getProducts();
+    }
+    loadPage();
+  }, []);
+
   return (
-    <Container maxWidth="xs">
-      <CssBaseline />
-      <Stack gap={2} mt={20}>
-        <Typography align="center" variant="h1">
-          Травы.ru
-        </Typography>
-        <Typography align="center">
-          Стало скучно? Добро пожаловать в нашу аптеку!
-        </Typography>
-        <Button href="/login" fullWidth variant="outlined" sx={{ mt: 3 }}>
-          Войти
-        </Button>
-        <Button href="/register" fullWidth variant="outlined">
-          Зарегистрироваться
-        </Button>
+    <Container maxWidth="lg">
+      <Stack direction="row" mt={4} gap={3} flexWrap="wrap">
+        {productCards}
       </Stack>
     </Container>
   );
 }
 
-export default Home;
+export default observer(Home);

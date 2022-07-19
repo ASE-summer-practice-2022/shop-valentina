@@ -1,28 +1,47 @@
-version: "3.3"
+version: "3.9"
 
 services:
   nginx:
+    container_name: nginx
+    restart: always
     build:
-      context: .
-      dockerfile: docker/nginx.dockerfile
+      context: docker/
+      dockerfile: nginx.dockerfile
     ports:
       - 8080:80
-    links:
+    volumes:
+      - ./:/var/www/laravel-react-shop
+    networks:
+      - app-network
+    depends_on:
       - fpm
-    volumes:
-      - ./:/var/www/laravel-react-shop/backend
   fpm:
+    container_name: fpm
+    restart: always
     build:
-      context: .
-      dockerfile: docker/fpm.dockerfile
+      context: docker/
+      dockerfile: fpm.dockerfile
     volumes:
-      - ./:/var/www/laravel-react-shop/backend
-    links:
+      - ./:/var/www/laravel-react-shop
+    networks:
+      - app-network
+    depends_on:
       - mysql
   mysql:
+    container_name: mysql
+    restart: always
     image: mysql:8.0
-    ports:
-      - 33061:3306
+    volumes:
+      - dbdata:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=laravel
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+    dbdata:

@@ -7,7 +7,7 @@
   <link href="{{ mix('css/app.css')}}" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="icon" type="image/png" href="favicon.ico">
-  <title>Awesome Todo List - @yield('title')</title>
+  <title>Travy Farmacy Shop - @yield('title')</title>
 </head>
 
 <body>
